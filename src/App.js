@@ -12,6 +12,7 @@ function App() {
   const [displaycityinfo, setDisplaycityinfo] = useState("");
   const [weatherdata, setWeatherdata] = useState([]);
   const [inputcity, setInputcity] = useState("");
+  const [error, setError] = useState("");
 
   function locationfinder(event) {
     setInputcity(event.target.value)
@@ -24,7 +25,7 @@ function App() {
       .then((weatherforecast) => {
         console.log(weatherforecast)
         setWeatherdata(weatherforecast.data)
-      })
+      }).catch(setError)
     console.log(weatherinfo)
   }
 
@@ -58,7 +59,7 @@ function App() {
         <Weather forecast={weatherdata} />
 
 
-
+      {error.message}
       </header>
     </div>
   );
