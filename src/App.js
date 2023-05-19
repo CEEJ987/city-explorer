@@ -57,7 +57,6 @@ function App() {
         <Map lat={displaycityinfo.lat} lon={displaycityinfo.lon} />
         <Weather forecast={weatherdata} />
 
-        {imageholder}
 
 
       </header>
